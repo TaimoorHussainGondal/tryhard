@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container-fluid mt-3">
+        <div class="row">
+        <div class="col-sm">
+            <h1 class="text-center">Movie Ticket System</h1>
+            <table class="text-cneter bg-light mt-3 ml-3" >
+                <tr>
+                    <td><label for="">Enter Name</label></td>
+                    <td><input class="form-control"type="text" id="name"></td>
+
+                </tr>
+                <tr>
+                    <td><label for="">Number of tickets</label></td>
+                    <td><input class="form-control" type="number" id="tickets"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Number of Persons</label></td>
+                    <td><input class="form-control"type="number" id="persons"></td>
+                </tr>
+            
+                    
+                
+
+            </table>
+            <button onclick="adddetails()" class="btn btn-secondary mt-3 ml-3 ">BOOK TICKETS</button>
+            <button onclick="Show()" class="btn btn-dark mt-3 ml-3 ">Show Invoice</button>
+            <button onclick="handleClick(event)" id="btn" class="btn btn-primary mt-3 ml-3">Reset Inputs</button>
+
+        </div>
+    </div>
+      
+      <div class="container mt-3">
+        <table class="table" id="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">NAME</th>
+                <th scope="col">NO OF TICKETS</th>
+                <th scope="col">NO OF PERSONS</th>
+                
+              </tr>
+            </thead>
+        </table>
+      </div>
+    </div>
+      <script>
+    
+        
+        var arrrydata1=[];
+        var arrrydata2=[];
+        var arrrydata3=[];
+        var cell;
+       var a=[];
+        var newrow;
+        function adddetails(){
+            var name=document.getElementById('name').value;
+        var tickets=parseInt( document.getElementById("tickets").value);
+        var persons=parseInt( document.getElementById("persons").value);
+        var table = document.getElementById("table");
+            arrrydata1.push(name);
+            arrrydata2.push(tickets);
+            arrrydata3.push(persons);
+            
+            
+           
+              
+           
+       
+           
+            }
+
+            function Show(){
+                
+              for(var i=0;i<arrrydata1.length;i++)
+              {
+              
+               newRow = table.insertRow();
+
+              var cell = newRow.insertCell();
+              cell.innerHTML= arrrydata1[i];
+              var cell = newRow.insertCell();
+              cell.innerHTML= arrrydata2[i];
+              var cell = newRow.insertCell()
+              
+              cell.innerHTML= arrrydata3[i];
+              
+              
+              }
+              arrrydata1=[];
+              arrrydata2=[];
+              arrrydata3=[];
+            }
+            // function displaydetails(){
+                const btn = document.getElementById('btn');
+
+btn.addEventListener('click', function reset(event) {
+  // 👇️ if you are submitting a form
+  event.preventDefault();
+
+  const inputs = document.querySelectorAll('#name, #persons,#tickets');
+
+  inputs.forEach(input => {
+    input.value = '';
+  });
+});
+            // }
+           
+              // var newRow = table.insertRow();
+            //    cell = newRow.insertCell();
+            //   cell.innerHTML= arrrydata1[i];
+            //    cell = newRow.insertCell();
+              
+            //   cell.innerHTML= arrrydata2[i];
+            //   cell = newRow.insertCell();
+              
+              
+            //   cell.innerHTML= arrrydata3[i];
+        
+        // function displaydetails(){
+        //     var name=document.getElementById('name').value;
+        //  var tickets=document.getElementById("tickets").value;
+        //  var persons=document.getElementById("persons").value;
+
+         
+        // //     // var getname=document.getElementById("display").value;
+        // //     // getname.innerHTML=name;
+        // //     document.getElementById("display").innerHTML = name;
+        // //     document.getElementById("display").innerHTML = tickets;
+        // //     document.getElementById("display").innerHTML = persons
+        // for(var i=o;i<a.length;i++){
+        //       var newRow = table.insertRow();
+        //        cell = newRow.insertCell();
+        //       cell.innerHTML= name[i];
+        //        cell = newRow.insertCell();
+              
+        //       cell.innerHTML= tickets[i];
+        //       cell = newRow.insertCell();
+              
+              
+        //       cell.innerHTML= persons[i];
+        
+        // }
+        // name=[];
+        // persons=[];
+        // tickets=[];
+
+
+        // }
+        
+        
+
+
+      </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
